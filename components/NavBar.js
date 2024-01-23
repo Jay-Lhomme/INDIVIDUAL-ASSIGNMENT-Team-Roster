@@ -4,14 +4,16 @@ import Link from 'next/link';
 import {
   Navbar, Container, Nav, Button,
 } from 'react-bootstrap';
+// import { useAuth } from '../utils/context/authContext';
 import { signOut } from '../utils/auth';
 
 export default function NavBar() {
+  // const { user } = useAuth();
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link passHref href="/">
-          <Navbar.Brand>CHANGE ME</Navbar.Brand>
+          <Navbar.Brand>ALEPH-BET ROX</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -20,7 +22,21 @@ export default function NavBar() {
             <Link passHref href="/">
               <Nav.Link>Home</Nav.Link>
             </Link>
-            <Button variant="danger" onClick={signOut}>Sign Out</Button>
+            <Link passHref href="/team">
+              <Nav.Link>Team</Nav.Link>
+            </Link>
+            <Link passHref href="/team/new">
+              <Nav.Link>New</Nav.Link>
+            </Link>
+            <Link passHref href="">
+              <Nav.Link>
+                <span>
+                  <Button type="button" className="justify-content-center align-content-center" size="sm" variant="danger" onClick={signOut}>
+                    SIGN OUT
+                  </Button>
+                </span>
+              </Nav.Link>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -6,7 +6,7 @@ import { useAuth } from '../utils/context/authContext';
 import { getMembers } from '../api/MemberData';
 import MemberCard from '../components/MemberCard';
 
-function Home() {
+function Member() {
   const [members, setMembers] = useState([]);
 
   const { user } = useAuth();
@@ -33,4 +33,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Member;
